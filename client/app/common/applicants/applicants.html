@@ -1,0 +1,34 @@
+<table class="table table-hover">
+    <thead>
+    <tr>
+        <th>
+            <div>Number</div>
+        </th>
+        <th>
+            <div>Full name</div>
+        </th>
+        <th>
+            <div>Date create</div>
+        </th>
+        <th>
+            <div>Date done</div>
+        </th>
+        <th>
+            <div>Status</div>
+        </th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="applicant in vm.applicants track by applicant.id">
+        <td>{{ ::applicant.number }}</td>
+        <td>{{ ::vm.getFullName(applicant) }}</td>
+        <td>{{ ::applicant.created }}</td>
+        <td>{{ ::applicant.done }}</td>
+        <td>{{ ::vm.getStatusName(applicant.status) }}</td>
+        <td>
+            <button class="btn btn-default" ng-click="vm.removeApplicant(applicant.id)">Remove</button>
+        </td>
+    </tr>
+    </tbody>
+</table>
