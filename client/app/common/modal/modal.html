@@ -1,0 +1,74 @@
+<div>
+    <div class="modal-header">
+        <h3 class="modal-title">{{vm.title}}</h3>
+    </div>
+
+    <form name="vm.dataForm"
+          novalidate
+          class="ng-pristine ng-valid"
+          ng-submit="vm.createApplicant({isValid: vm.dataForm.$valid})">
+
+        <div class="modal-body">
+            <div class="form-group">
+
+
+                <label class="light-label">Number</label>
+                <input type="number"
+                       class="form-control"
+                       name="number"
+                       ng-model="vm.applicant.number"
+                       required />
+
+                <!-- Use ng-if because ng-messages didn't work -->
+                <div ng-if="vm.dataForm.number.$error.required"
+                     style="color:maroon"
+                     role="alert">
+                    <div ng-message="required">
+                        Error
+                    </div>
+                </div>
+
+                <label class="light-label">First Name</label>
+                <input type="text"
+                       class="form-control"
+                       name="firstName"
+                       ng-model="vm.applicant.firstName"
+                       required />
+
+                <!-- Use ng-if because ng-messages didn't work -->
+                <div ng-if="vm.dataForm.firstName.$error.required"
+                     style="color:maroon"
+                     role="alert">
+                    <div ng-message="required">
+                        Error
+                    </div>
+                </div>
+
+                <label class="light-label">Last Name</label>
+                <input type="text"
+                       class="form-control"
+                       name="lastName"
+                       ng-model="vm.applicant.lastName"
+                       required/>
+
+                <!-- Use ng-if because ng-messages didn't work -->
+                <div ng-if="vm.dataForm.lastName.$error.required"
+                     style="color:maroon"
+                     role="alert">
+                    <div ng-message="required">
+                        Error
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-footer">
+            <div class="form-group">
+                <button class="btn btn-primary pull-right" type="submit">
+                    Create
+                </button>
+            </div>
+        </div>
+
+    </form>
+</div>

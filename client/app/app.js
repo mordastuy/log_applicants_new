@@ -4,6 +4,7 @@ import ngFire from 'angularfire'
 import Common from './common/common';
 import Components from './components/components';
 import AppComponent from './app.component';
+import uiBootstrap from 'angular-bootstrap-npm';
 //import 'normalize.css';
 
 angular
@@ -11,7 +12,8 @@ angular
         uiRouter,
         Common.name,
         Components.name,
-        ngFire
+        ngFire,
+        uiBootstrap
     ])
     .config(($locationProvider) => {
         "ngInject";

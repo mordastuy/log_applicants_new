@@ -10,6 +10,8 @@ class ApplicantsController {
     removeApplicant(applicant) {
         this.applicants.$remove(applicant);
     }
+
+
 }
 
 export default ApplicantsController;
