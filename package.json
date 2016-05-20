@@ -7,7 +7,9 @@
     "angular": "^1.5.0",
     "angular-bootstrap-npm": "^0.14.3",
     "angular-ui-router": "^0.2.15",
+    "angularfire": "^1.2.0",
     "bootstrap": "^3.3.6",
+    "firebase": "^3.0.2",
     "jquery": "^2.2.3",
     "normalize.css": "^3.0.3"
   },

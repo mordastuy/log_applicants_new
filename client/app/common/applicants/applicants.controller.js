@@ -7,8 +7,8 @@ class ApplicantsController {
         this.getStatusName = applicantsService.getStatusName;
     }
 
-    removeApplicant(applicantId) {
-        this.applicants = this.applicants.filter((applicant) => applicant.id != applicantId);
+    removeApplicant(applicant) {
+        this.applicants.$remove(applicant);
     }
 }
 

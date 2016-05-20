@@ -20,14 +20,14 @@
     </tr>
     </thead>
     <tbody>
-    <tr ng-repeat="applicant in vm.applicants track by applicant.id">
+    <tr ng-repeat="applicant in vm.applicants track by applicant.number">
         <td>{{ ::applicant.number }}</td>
         <td>{{ ::vm.getFullName(applicant) }}</td>
         <td>{{ ::applicant.created }}</td>
         <td>{{ ::applicant.done }}</td>
         <td>{{ ::vm.getStatusName(applicant.status) }}</td>
         <td>
-            <button class="btn btn-default" ng-click="vm.removeApplicant(applicant.id)">Remove</button>
+            <button class="btn btn-default" ng-click="vm.removeApplicant(applicant)">Remove</button>
         </td>
     </tr>
     </tbody>
