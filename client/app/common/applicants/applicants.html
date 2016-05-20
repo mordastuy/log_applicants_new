@@ -1,26 +1,52 @@
 <table class="table table-hover">
     <thead>
     <tr>
-        <th>
-            <div>Number</div>
+        <th class="number-head">
+            <div>
+                <label for="ex1">
+                    <a href="#">Number</a>
+                </label>
+                <input class="form-control" id="ex1" type="text" />
+            </div>
         </th>
-        <th>
-            <div>Full name</div>
+        <th class="name-head">
+            <div>
+                <label for="ex2">
+                    <a href="#">Full name</a>
+                </label>
+                <input class="form-control" id="ex2" type="text" />
+            </div>
         </th>
-        <th>
-            <div>Date create</div>
+        <th class="date-head">
+            <div>
+                <label for="ex3">
+                    <a href="#">Date create</a>
+                </label>
+                <input class="form-control" id="ex3" type="text" />
+            </div>
         </th>
-        <th>
-            <div>Date done</div>
+        <th class="date-head">
+            <div>
+                <label for="ex4">
+                    <a href="#">Date done</a>
+                </label>
+                <input class="form-control" id="ex4" type="text" />
+            </div>
         </th>
-        <th>
-            <div>Status</div>
+        <th class="status-head">
+            <div>
+                <label for="ex5">
+                    <a href="#">Status</a>
+                </label>
+                <input class="form-control" id="ex5" type="text" />
+            </div>
         </th>
         <th></th>
     </tr>
     </thead>
     <tbody>
-    <tr ng-repeat="applicant in vm.applicants track by applicant.number">
+    <tr ng-repeat="applicant in vm.applicants track by applicant.number"
+        ng-class="{active: !applicant.status, success: applicant.status}">
         <td>{{ ::applicant.number }}</td>
         <td>{{ ::vm.getFullName(applicant) }}</td>
         <td>{{ ::applicant.created }}</td>
