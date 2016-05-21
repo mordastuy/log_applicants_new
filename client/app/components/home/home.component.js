@@ -7,7 +7,15 @@ let homeComponent = {
     bindings    : {},
     template,
     controller,
-    controllerAs: 'vm'
+    controllerAs: 'vm',
+    $routeConfig: [
+        {
+            path: '/',
+            name: 'Applicants',
+            component: 'applicants',
+            useAsDefault: true
+        }
+    ]
 };
 
 export default homeComponent;

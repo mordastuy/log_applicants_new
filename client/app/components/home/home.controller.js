@@ -2,8 +2,17 @@ class HomeController {
     constructor(homeFirebaseResourceService) {
         "ngInject";
 
+        this._homeFirebaseResourceService = homeFirebaseResourceService;
+
         this.createApplicant = homeFirebaseResourceService.createApplicant;
-        this.applicants = homeFirebaseResourceService.getApplicants();
+    }
+
+    getApplicants() {
+        return this.applicants;
+    }
+
+    $routerOnActivate(next) {
+        this.applicants = this._homeFirebaseResourceService.getApplicants();
     }
 }
 

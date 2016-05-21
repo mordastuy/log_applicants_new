@@ -4,8 +4,9 @@ import './applicants.styl';
 
 let applicantsComponent = {
     restrict    : 'E',
-    bindings    : {
-        applicants: '<'
+    bindings    : {},
+    require: {
+        homeCtrl: '^home'
     },
     template,
     controller,

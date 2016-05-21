@@ -46,6 +46,7 @@
     </thead>
     <tbody>
     <tr ng-repeat="applicant in vm.applicants track by applicant.number"
+        ng-click="vm.goToDetail(applicant)"
         ng-class="{active: !applicant.status, success: applicant.status}">
         <td>{{ ::applicant.number }}</td>
         <td>{{ ::vm.getFullName(applicant) }}</td>

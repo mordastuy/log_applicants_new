@@ -7,7 +7,20 @@ let aboutComponent = {
     bindings    : {},
     template,
     controller,
-    controllerAs: 'vm'
+    controllerAs: 'vm',
+    $routeConfig: [
+        {
+            path: '/',
+            name: 'Default',
+            component: 'detail',
+            useAsDefault: true
+        },
+        {
+            path: '/:id',
+            name: 'Detail',
+            component: 'detail'
+        }
+    ]
 };
 
 export default aboutComponent;

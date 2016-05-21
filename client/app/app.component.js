@@ -3,7 +3,21 @@ import './app.styl';
 
 let appComponent = {
     template,
-    restrict: 'E'
+    restrict: 'E',
+    $routeConfig: [
+        {
+            path: '/home/...',
+            name: 'Home',
+            component: 'home',
+            useAsDefault: true
+
+        },
+        {
+            path: '/about/...',
+            name: 'About',
+            component: 'about'
+        }
+    ]
 };
 
 export default appComponent;
