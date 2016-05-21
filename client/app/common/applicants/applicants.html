@@ -45,9 +45,10 @@
     </tr>
     </thead>
     <tbody>
-    <tr ng-repeat="applicant in vm.applicants track by applicant.number"
+    <tr ng-repeat="applicant in vm.applicants track by applicant.$id"
         ng-click="vm.goToDetail(applicant)"
-        ng-class="{active: !applicant.status, success: applicant.status}">
+        ng-class="{active: !applicant.status, success: applicant.status}"
+        class="pointer">
         <td>{{ ::applicant.number }}</td>
         <td>{{ ::vm.getFullName(applicant) }}</td>
         <td>{{ ::applicant.created }}</td>

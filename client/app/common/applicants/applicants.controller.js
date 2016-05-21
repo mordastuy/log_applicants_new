@@ -17,7 +17,7 @@ class ApplicantsController {
     }
 
     goToDetail(applicant){
-        this._$rootRouter.navigate(['/About/Detail', {id: applicant.number}]);
+        this._$rootRouter.navigate(['/About/Detail', {id: applicant.$id}]);
     }
 }
 
