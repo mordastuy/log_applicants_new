@@ -2,7 +2,6 @@ class ApplicantsController {
     constructor(applicantsService) {
         "ngInject";
 
-        this.applicants = applicantsService.getApplicants();
         this.getFullName = applicantsService.getFullName;
         this.getStatusName = applicantsService.getStatusName;
     }
@@ -10,7 +9,6 @@ class ApplicantsController {
     removeApplicant(applicant) {
         this.applicants.$remove(applicant);
     }
-
 
 }
 

@@ -4,7 +4,9 @@ import './applicants.styl';
 
 let applicantsComponent = {
     restrict    : 'E',
-    bindings    : {},
+    bindings    : {
+        applicants: '<'
+    },
     template,
     controller,
     controllerAs: 'vm'

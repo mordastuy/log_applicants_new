@@ -6,7 +6,7 @@
     <form name="vm.dataForm"
           novalidate
           class="ng-pristine ng-valid"
-          ng-submit="vm.createApplicant({isValid: vm.dataForm.$valid})">
+          ng-submit="vm.createApplicant({isValid: vm.dataForm.$valid, applicant: vm.applicant})">
 
         <div class="modal-body">
             <div class="form-group">

@@ -1,7 +1,5 @@
 <div class="panel-group">
-    <ul class="pager">
-        <li class="next"><a href="#" ng-click="vm.open()">Create</a></li>
-    </ul>
-    <applicants></applicants>
+    <navbar applicants="vm.applicants" create-applicant="vm.createApplicant(applicants, applicant)"></navbar>
+    <applicants applicants="vm.applicants"></applicants>
 </div>
 

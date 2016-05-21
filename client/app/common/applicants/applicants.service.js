@@ -1,10 +1,9 @@
-export default ($firebaseArray, Firebase) => {
+export default () => {
     "ngInject";
 
     const service = {
         getFullName,
-        getStatusName,
-        getApplicants
+        getStatusName
     };
 
     return service;
@@ -29,10 +28,5 @@ export default ($firebaseArray, Firebase) => {
         return statusName;
     }
 
-    function getApplicants() {
-        const applicants = new Firebase('https://popping-fire-5460.firebaseio.com/applicants');
-
-        return $firebaseArray(applicants);
-    }
 }
 

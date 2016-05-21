@@ -5,6 +5,8 @@ import Common from './common/common';
 import Components from './components/components';
 import AppComponent from './app.component';
 import uiBootstrap from 'angular-bootstrap-npm';
+import moment from 'moment';
+import angularMoment from 'angular-moment';
 //import 'normalize.css';
 
 angular
@@ -13,7 +15,8 @@ angular
         Common.name,
         Components.name,
         ngFire,
-        uiBootstrap
+        uiBootstrap,
+        angularMoment.name
     ])
     .config(($locationProvider) => {
         "ngInject";
@@ -21,6 +24,7 @@ angular
         $locationProvider.html5Mode(true).hashPrefix('!');
     })
     .value('Firebase', Firebase)
+    .constant('DATE_FORMAT', 'DD.MM.YYYY')
     .component('app', AppComponent);
 
 //var myApp = Firebase.initializeApp({
