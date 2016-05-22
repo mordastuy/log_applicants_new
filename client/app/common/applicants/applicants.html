@@ -8,7 +8,8 @@
                     <span ng-show="vm.sortType === 'number' && vm.sortReverse" class="glyphicon glyphicon-arrow-up"></span>
                     <span ng-show="vm.sortType === 'number' && !vm.sortReverse" class="glyphicon glyphicon-arrow-down"></span>
                 </label>
-                <input class="form-control" id="ex1" type="text"/>
+                <!--<span class="glyphicon glyphicon-filter"></span>-->
+                <input class="form-control" id="ex1" type="text" ng-model="vm.searchFilter.number" />
             </div>
         </th>
         <th class="name-head">
@@ -18,7 +19,7 @@
                     <span ng-show="vm.sortType === 'lastName' && vm.sortReverse" class="glyphicon glyphicon-arrow-up"></span>
                     <span ng-show="vm.sortType === 'lastName' && !vm.sortReverse" class="glyphicon glyphicon-arrow-down"></span>
                 </label>
-                <input class="form-control" id="ex2" type="text"/>
+                <input class="form-control" id="ex2" type="text" ng-model="vm.searchFilter.fullName" />
             </div>
         </th>
         <th class="date-head">
@@ -28,7 +29,7 @@
                     <span ng-show="vm.sortType === 'created' && vm.sortReverse" class="glyphicon glyphicon-arrow-up"></span>
                     <span ng-show="vm.sortType === 'created' && !vm.sortReverse" class="glyphicon glyphicon-arrow-down"></span>
                 </label>
-                <input class="form-control" id="ex3" type="text"/>
+                <input class="form-control" id="ex3" type="text" ng-model="vm.searchFilter.created" />
             </div>
         </th>
         <th class="date-head">
@@ -38,7 +39,7 @@
                     <span ng-show="vm.sortType === 'done' && vm.sortReverse" class="glyphicon glyphicon-arrow-up"></span>
                     <span ng-show="vm.sortType === 'done' && !vm.sortReverse" class="glyphicon glyphicon-arrow-down"></span>
                 </label>
-                <input class="form-control" id="ex4" type="text"/>
+                <input class="form-control" id="ex4" type="text" ng-model="vm.searchFilter.done" />
             </div>
         </th>
         <th class="status-head">
@@ -48,14 +49,18 @@
                     <span ng-show="vm.sortType === 'status' && vm.sortReverse" class="glyphicon glyphicon-arrow-up"></span>
                     <span ng-show="vm.sortType === 'status' && !vm.sortReverse" class="glyphicon glyphicon-arrow-down"></span>
                 </label>
-                <input class="form-control" id="ex5" type="text"/>
+                <input class="form-control" id="ex5" type="text" ng-model="vm.searchFilter.status" />
             </div>
         </th>
-        <th></th>
+        <th>
+            <div>
+                <button type="button" ng-click="vm.clearFilter()" class="btn btn-default">Clear filter</button>
+            </div>
+        </th>
     </tr>
     </thead>
     <tbody>
-    <tr ng-repeat="applicant in vm.applicants | orderBy:vm.sortType:vm.sortReverse track by applicant.$id"
+    <tr ng-repeat="applicant in vm.applicants | orderBy:vm.sortType:vm.sortReverse | applicantsSearchFilter:vm.searchFilter track by applicant.$id"
         ng-click="vm.goToDetail(applicant)"
         ng-class="{active: !applicant.status, success: applicant.status}"
         class="pointer">

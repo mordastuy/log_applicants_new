@@ -6,6 +6,7 @@ class ApplicantsController {
 
         this.sortType = 'number';
         this.sortReverse = false;
+        this.searchFilter = {};
 
         this.getFullName = applicantsService.getFullName;
         this.getStatusName = applicantsService.getStatusName;
@@ -26,6 +27,10 @@ class ApplicantsController {
     changeSort(type) {
         this.sortType = type;
         this.sortReverse = !this.sortReverse;
+    }
+
+    clearFilter() {
+        this.searchFilter = {};
     }
 }
 
