@@ -4,7 +4,9 @@
         <th class="number-head">
             <div>
                 <label for="ex1">
-                    <a href="#">Number</a>
+                    <a href="#" ng-click="vm.changeSort('number')">Number</a>
+                    <span ng-show="vm.sortType === 'number' && vm.sortReverse" class="glyphicon glyphicon-arrow-up"></span>
+                    <span ng-show="vm.sortType === 'number' && !vm.sortReverse" class="glyphicon glyphicon-arrow-down"></span>
                 </label>
                 <input class="form-control" id="ex1" type="text"/>
             </div>
@@ -12,7 +14,9 @@
         <th class="name-head">
             <div>
                 <label for="ex2">
-                    <a href="#">Full name</a>
+                    <a href="#" ng-click="vm.changeSort('lastName')">Full name</a>
+                    <span ng-show="vm.sortType === 'lastName' && vm.sortReverse" class="glyphicon glyphicon-arrow-up"></span>
+                    <span ng-show="vm.sortType === 'lastName' && !vm.sortReverse" class="glyphicon glyphicon-arrow-down"></span>
                 </label>
                 <input class="form-control" id="ex2" type="text"/>
             </div>
@@ -20,7 +24,9 @@
         <th class="date-head">
             <div>
                 <label for="ex3">
-                    <a href="#">Date create</a>
+                    <a href="#" ng-click="vm.changeSort('created')">Date created</a>
+                    <span ng-show="vm.sortType === 'created' && vm.sortReverse" class="glyphicon glyphicon-arrow-up"></span>
+                    <span ng-show="vm.sortType === 'created' && !vm.sortReverse" class="glyphicon glyphicon-arrow-down"></span>
                 </label>
                 <input class="form-control" id="ex3" type="text"/>
             </div>
@@ -28,7 +34,9 @@
         <th class="date-head">
             <div>
                 <label for="ex4">
-                    <a href="#">Date done</a>
+                    <a href="#" ng-click="vm.changeSort('done')">Date done</a>
+                    <span ng-show="vm.sortType === 'done' && vm.sortReverse" class="glyphicon glyphicon-arrow-up"></span>
+                    <span ng-show="vm.sortType === 'done' && !vm.sortReverse" class="glyphicon glyphicon-arrow-down"></span>
                 </label>
                 <input class="form-control" id="ex4" type="text"/>
             </div>
@@ -36,7 +44,9 @@
         <th class="status-head">
             <div>
                 <label for="ex5">
-                    <a href="#">Status</a>
+                    <a href="#" ng-click="vm.changeSort('status')">Status</a>
+                    <span ng-show="vm.sortType === 'status' && vm.sortReverse" class="glyphicon glyphicon-arrow-up"></span>
+                    <span ng-show="vm.sortType === 'status' && !vm.sortReverse" class="glyphicon glyphicon-arrow-down"></span>
                 </label>
                 <input class="form-control" id="ex5" type="text"/>
             </div>
@@ -45,7 +55,7 @@
     </tr>
     </thead>
     <tbody>
-    <tr ng-repeat="applicant in vm.applicants track by applicant.$id"
+    <tr ng-repeat="applicant in vm.applicants | orderBy:vm.sortType:vm.sortReverse track by applicant.$id"
         ng-click="vm.goToDetail(applicant)"
         ng-class="{active: !applicant.status, success: applicant.status}"
         class="pointer">

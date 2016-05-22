@@ -4,6 +4,9 @@ class ApplicantsController {
 
         this._$rootRouter = $rootRouter;
 
+        this.sortType = 'number';
+        this.sortReverse = false;
+
         this.getFullName = applicantsService.getFullName;
         this.getStatusName = applicantsService.getStatusName;
     }
@@ -16,8 +19,13 @@ class ApplicantsController {
         this.applicants = this.homeCtrl.getApplicants();
     }
 
-    goToDetail(applicant){
+    goToDetail(applicant) {
         this._$rootRouter.navigate(['/About/Detail', {id: applicant.$id}]);
+    }
+
+    changeSort(type) {
+        this.sortType = type;
+        this.sortReverse = !this.sortReverse;
     }
 }
 

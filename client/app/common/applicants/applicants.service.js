@@ -9,7 +9,7 @@ export default () => {
     return service;
 
     function getFullName(applicant) {
-        return `${applicant.firstName} ${applicant.lastName} `;
+        return `${applicant.lastName} ${applicant.firstName} `;
     }
 
     function getStatusName(status) {
