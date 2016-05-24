@@ -20,18 +20,10 @@ describe('About', () => {
 
     describe('Controller', () => {
         // controller specs
-        it('has a name property [REMOVE]', () => { // erase if removing this.name from the controller
-            let controller = makeController();
-            expect(controller).to.have.property('name');
-        });
     });
 
     describe('Template', () => {
         // template specs
-        // tip: use regex to ensure correct bindings are used e.g., {{  }}
-        it('has name in template [REMOVE]', () => {
-            expect(AboutTemplate).to.match(/{{\s?vm\.name\s?}}/g);
-        });
     });
 
     describe('Component', () => {
@@ -42,8 +34,8 @@ describe('About', () => {
             expect(component.template).to.equal(AboutTemplate);
         });
 
-        it('uses `controllerAs` syntax', () => {
-            expect(component).to.have.property('controllerAs');
+        it('not uses `controllerAs` syntax', () => {
+            expect(component).not.have.property('controllerAs');
         });
 
         it('invokes the right controller', () => {
