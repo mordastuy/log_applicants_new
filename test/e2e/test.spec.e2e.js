@@ -3,7 +3,7 @@ describe('Protractor Test', () => {
     const elementNameHead = element(by.css('.name-head a')),
           elementArrowUp  = element(by.css('.name-head .glyphicon.glyphicon-arrow-up'));
 
-    it('should change sortType to DESC', () => {
+    it('should change sortType', () => {
         browser.get('http://localhost:3000/home');
 
         elementNameHead.click()
