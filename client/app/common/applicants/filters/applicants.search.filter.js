@@ -22,7 +22,6 @@ export default (applicantsService) => {
         }
 
         if ('fullName' in filter) {
-            //debugger;
             bitMask.push(~applicantsService.getFullName(item).toLowerCase().indexOf(filter.fullName.toLowerCase()) ? 1 : 0);
         }
 

@@ -1,6 +1,6 @@
 class HomeController {
     constructor(homeFirebaseResourceService) {
-        "ngInject";
+            'ngInject';
 
         this._homeFirebaseResourceService = homeFirebaseResourceService;
 

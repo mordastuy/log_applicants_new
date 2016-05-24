@@ -7,7 +7,6 @@ let aboutComponent = {
     bindings    : {},
     template,
     controller,
-    controllerAs: 'vm',
     $routeConfig: [
         {
             path: '/',

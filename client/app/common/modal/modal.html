@@ -1,12 +1,12 @@
 <div>
     <div class="modal-header">
-        <h3 class="modal-title">{{vm.title}}</h3>
+        <h3 class="modal-title">{{$ctrl.title}}</h3>
     </div>
 
-    <form name="vm.dataForm"
+    <form name="$ctrl.dataForm"
           novalidate
           class="ng-pristine ng-valid"
-          ng-submit="vm.createApplicant({isValid: vm.dataForm.$valid, applicant: vm.applicant})">
+          ng-submit="$ctrl.createApplicant({isValid: $ctrl.dataForm.$valid, applicant: $ctrl.applicant})">
 
         <div class="modal-body">
             <div class="form-group">
@@ -16,11 +16,11 @@
                 <input type="number"
                        class="form-control"
                        name="number"
-                       ng-model="vm.applicant.number"
+                       ng-model="$ctrl.applicant.number"
                        required />
 
                 <!-- Use ng-if because ng-messages didn't work -->
-                <div ng-if="vm.dataForm.number.$error.required"
+                <div ng-if="$ctrl.dataForm.number.$error.required"
                      style="color:maroon"
                      role="alert">
                     <div ng-message="required">
@@ -32,11 +32,11 @@
                 <input type="text"
                        class="form-control"
                        name="firstName"
-                       ng-model="vm.applicant.firstName"
+                       ng-model="$ctrl.applicant.firstName"
                        required />
 
                 <!-- Use ng-if because ng-messages didn't work -->
-                <div ng-if="vm.dataForm.firstName.$error.required"
+                <div ng-if="$ctrl.dataForm.firstName.$error.required"
                      style="color:maroon"
                      role="alert">
                     <div ng-message="required">
@@ -48,11 +48,11 @@
                 <input type="text"
                        class="form-control"
                        name="lastName"
-                       ng-model="vm.applicant.lastName"
+                       ng-model="$ctrl.applicant.lastName"
                        required/>
 
                 <!-- Use ng-if because ng-messages didn't work -->
-                <div ng-if="vm.dataForm.lastName.$error.required"
+                <div ng-if="$ctrl.dataForm.lastName.$error.required"
                      style="color:maroon"
                      role="alert">
                     <div ng-message="required">

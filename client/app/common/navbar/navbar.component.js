@@ -9,8 +9,7 @@ let navbarComponent = {
         createApplicant: '&'
     },
     template,
-    controller,
-    controllerAs: 'vm'
+    controller
 };
 
 export default navbarComponent;

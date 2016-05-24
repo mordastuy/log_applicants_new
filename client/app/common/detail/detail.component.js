@@ -9,8 +9,7 @@ let detailComponent = {
         aboutCtrl: '^about',
     },
     template,
-    controller,
-    controllerAs: 'vm'
+    controller
 };
 
 export default detailComponent;

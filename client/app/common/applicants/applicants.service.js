@@ -1,5 +1,5 @@
 export default () => {
-    "ngInject";
+    'ngInject';
 
     const service = {
         getFullName,

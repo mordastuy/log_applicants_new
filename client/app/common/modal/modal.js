@@ -1,8 +1,6 @@
 import angular from 'angular';
 import modalComponent from './modal.component';
 
-let modalModule = angular
+export default angular
     .module('modal', [])
     .component('modal', modalComponent);
-
-export default modalModule;

@@ -3,7 +3,7 @@ import template from './../views/modal.create.html'
 
 class NavbarController {
     constructor($uibModal) {
-        "ngInject";
+        'ngInject';
 
         this._$uibModal = $uibModal;
     }

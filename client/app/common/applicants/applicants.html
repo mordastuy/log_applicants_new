@@ -4,73 +4,73 @@
         <th class="number-head">
             <div>
                 <label for="ex1">
-                    <a href="#" ng-click="vm.changeSort('number')">Number</a>
-                    <span ng-show="vm.sortType === 'number' && vm.sortReverse" class="glyphicon glyphicon-arrow-up"></span>
-                    <span ng-show="vm.sortType === 'number' && !vm.sortReverse" class="glyphicon glyphicon-arrow-down"></span>
+                    <a href="#" ng-click="$ctrl.changeSort('number')">Number</a>
+                    <span ng-show="$ctrl.sortType === 'number' && $ctrl.sortReverse" class="glyphicon glyphicon-arrow-up"></span>
+                    <span ng-show="$ctrl.sortType === 'number' && !$ctrl.sortReverse" class="glyphicon glyphicon-arrow-down"></span>
                 </label>
                 <!--<span class="glyphicon glyphicon-filter"></span>-->
-                <input class="form-control" id="ex1" type="text" ng-model="vm.searchFilter.number" />
+                <input class="form-control" id="ex1" type="text" ng-model="$ctrl.searchFilter.number" />
             </div>
         </th>
         <th class="name-head">
             <div>
                 <label for="ex2">
-                    <a href="#" ng-click="vm.changeSort('lastName')">Full name</a>
-                    <span ng-show="vm.sortType === 'lastName' && vm.sortReverse" class="glyphicon glyphicon-arrow-up"></span>
-                    <span ng-show="vm.sortType === 'lastName' && !vm.sortReverse" class="glyphicon glyphicon-arrow-down"></span>
+                    <a href="#" ng-click="$ctrl.changeSort('lastName')">Full name</a>
+                    <span ng-show="$ctrl.sortType === 'lastName' && $ctrl.sortReverse" class="glyphicon glyphicon-arrow-up"></span>
+                    <span ng-show="$ctrl.sortType === 'lastName' && !$ctrl.sortReverse" class="glyphicon glyphicon-arrow-down"></span>
                 </label>
-                <input class="form-control" id="ex2" type="text" ng-model="vm.searchFilter.fullName" />
+                <input class="form-control" id="ex2" type="text" ng-model="$ctrl.searchFilter.fullName" />
             </div>
         </th>
         <th class="date-head">
             <div>
                 <label for="ex3">
-                    <a href="#" ng-click="vm.changeSort('created')">Date created</a>
-                    <span ng-show="vm.sortType === 'created' && vm.sortReverse" class="glyphicon glyphicon-arrow-up"></span>
-                    <span ng-show="vm.sortType === 'created' && !vm.sortReverse" class="glyphicon glyphicon-arrow-down"></span>
+                    <a href="#" ng-click="$ctrl.changeSort('created')">Date created</a>
+                    <span ng-show="$ctrl.sortType === 'created' && $ctrl.sortReverse" class="glyphicon glyphicon-arrow-up"></span>
+                    <span ng-show="$ctrl.sortType === 'created' && !$ctrl.sortReverse" class="glyphicon glyphicon-arrow-down"></span>
                 </label>
-                <input class="form-control" id="ex3" type="text" ng-model="vm.searchFilter.created" />
+                <input class="form-control" id="ex3" type="text" ng-model="$ctrl.searchFilter.created" />
             </div>
         </th>
         <th class="date-head">
             <div>
                 <label for="ex4">
-                    <a href="#" ng-click="vm.changeSort('done')">Date done</a>
-                    <span ng-show="vm.sortType === 'done' && vm.sortReverse" class="glyphicon glyphicon-arrow-up"></span>
-                    <span ng-show="vm.sortType === 'done' && !vm.sortReverse" class="glyphicon glyphicon-arrow-down"></span>
+                    <a href="#" ng-click="$ctrl.changeSort('done')">Date done</a>
+                    <span ng-show="$ctrl.sortType === 'done' && $ctrl.sortReverse" class="glyphicon glyphicon-arrow-up"></span>
+                    <span ng-show="$ctrl.sortType === 'done' && !$ctrl.sortReverse" class="glyphicon glyphicon-arrow-down"></span>
                 </label>
-                <input class="form-control" id="ex4" type="text" ng-model="vm.searchFilter.done" />
+                <input class="form-control" id="ex4" type="text" ng-model="$ctrl.searchFilter.done" />
             </div>
         </th>
         <th class="status-head">
             <div>
                 <label for="ex5">
-                    <a href="#" ng-click="vm.changeSort('status')">Status</a>
-                    <span ng-show="vm.sortType === 'status' && vm.sortReverse" class="glyphicon glyphicon-arrow-up"></span>
-                    <span ng-show="vm.sortType === 'status' && !vm.sortReverse" class="glyphicon glyphicon-arrow-down"></span>
+                    <a href="#" ng-click="$ctrl.changeSort('status')">Status</a>
+                    <span ng-show="$ctrl.sortType === 'status' && $ctrl.sortReverse" class="glyphicon glyphicon-arrow-up"></span>
+                    <span ng-show="$ctrl.sortType === 'status' && !$ctrl.sortReverse" class="glyphicon glyphicon-arrow-down"></span>
                 </label>
-                <input class="form-control" id="ex5" type="text" ng-model="vm.searchFilter.status" />
+                <input class="form-control" id="ex5" type="text" ng-model="$ctrl.searchFilter.status" />
             </div>
         </th>
         <th>
             <div>
-                <button type="button" ng-click="vm.clearFilter()" class="btn btn-default">Clear filter</button>
+                <button type="button" ng-click="$ctrl.clearFilter()" class="btn btn-default">Clear filter</button>
             </div>
         </th>
     </tr>
     </thead>
     <tbody>
-    <tr ng-repeat="applicant in vm.applicants | orderBy:vm.sortType:vm.sortReverse | applicantsSearchFilter:vm.searchFilter track by applicant.$id"
-        ng-click="vm.goToDetail(applicant)"
+    <tr ng-repeat="applicant in $ctrl.applicants | orderBy:$ctrl.sortType:$ctrl.sortReverse | applicantsSearchFilter:$ctrl.searchFilter track by applicant.$id"
+        ng-click="$ctrl.goToDetail(applicant)"
         ng-class="{active: !applicant.status, success: applicant.status}"
         class="pointer">
         <td>{{ ::applicant.number }}</td>
-        <td>{{ ::vm.getFullName(applicant) }}</td>
+        <td>{{ ::$ctrl.getFullName(applicant) }}</td>
         <td>{{ ::applicant.created }}</td>
         <td>{{ ::applicant.done }}</td>
-        <td>{{ ::vm.getStatusName(applicant.status) }}</td>
+        <td>{{ ::$ctrl.getStatusName(applicant.status) }}</td>
         <td>
-            <button class="btn btn-default" ng-click="vm.removeApplicant(applicant)">Remove</button>
+            <button class="btn btn-default" ng-click="$ctrl.removeApplicant(applicant)">Remove</button>
         </td>
     </tr>
     </tbody>

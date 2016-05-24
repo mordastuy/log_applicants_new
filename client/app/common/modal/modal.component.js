@@ -10,8 +10,7 @@ let modalComponent = {
         createApplicant: '&'
     },
     template,
-    controller,
-    controllerAs: 'vm'
+    controller
 };
 
 export default modalComponent;

@@ -9,8 +9,7 @@ let applicantsComponent = {
         homeCtrl: '^home'
     },
     template,
-    controller,
-    controllerAs: 'vm'
+    controller
 };
 
 export default applicantsComponent;

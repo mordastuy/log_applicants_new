@@ -1,6 +1,6 @@
 class ApplicantsController {
     constructor($rootRouter, applicantsService) {
-        "ngInject";
+        'ngInject';
 
         this._$rootRouter = $rootRouter;
 

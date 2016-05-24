@@ -19,7 +19,7 @@ angular
         'ngComponentRouter'
     ])
     .config(($locationProvider) => {
-        "ngInject";
+        'ngInject';
 
         $locationProvider.html5Mode(true).hashPrefix('!');
     })
@@ -29,10 +29,10 @@ angular
     .component('app', AppComponent);
 
 //var myApp = Firebase.initializeApp({
-//    apiKey       : "AIzaSyDfpD-fTtyEhz15nyR-tIrUQYJjdQCoKUs",
-//    authDomain   : "popping-fire-5460.firebaseapp.com",
-//    databaseURL  : "https://popping-fire-5460.firebaseio.com",
-//    storageBucket: "popping-fire-5460.appspot.com"
+//    apiKey       : 'AIzaSyDfpD-fTtyEhz15nyR-tIrUQYJjdQCoKUs',
+//    authDomain   : 'popping-fire-5460.firebaseapp.com',
+//    databaseURL  : 'https://popping-fire-5460.firebaseio.com',
+//    storageBucket: 'popping-fire-5460.appspot.com'
 //});
 //const ref = myApp.database().ref('/applicants');
 //return $firebaseArray(ref);
