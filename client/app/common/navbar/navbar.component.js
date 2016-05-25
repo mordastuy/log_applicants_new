@@ -4,9 +4,9 @@ import './navbar.styl';
 
 let navbarComponent = {
     restrict    : 'E',
-    bindings    : {
-        applicants: '<',
-        createApplicant: '&'
+    bindings    : {},
+    require: {
+        homeCtrl: '^home'
     },
     template,
     controller

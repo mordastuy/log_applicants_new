@@ -4,7 +4,7 @@
         <th class="number-head">
             <div>
                 <label for="ex1">
-                    <a href="#" ng-click="$ctrl.changeSort('number')">Number</a>
+                    <a href ng-click="$ctrl.changeSort('number')">Number</a>
                     <span ng-show="$ctrl.sortType === 'number' && $ctrl.sortReverse" class="glyphicon glyphicon-arrow-up"></span>
                     <span ng-show="$ctrl.sortType === 'number' && !$ctrl.sortReverse" class="glyphicon glyphicon-arrow-down"></span>
                 </label>
@@ -15,7 +15,7 @@
         <th class="name-head">
             <div>
                 <label for="ex2">
-                    <a href="#" ng-click="$ctrl.changeSort('lastName')">Full name</a>
+                    <a href ng-click="$ctrl.changeSort('lastName')">Full name</a>
                     <span ng-show="$ctrl.sortType === 'lastName' && $ctrl.sortReverse" class="glyphicon glyphicon-arrow-up"></span>
                     <span ng-show="$ctrl.sortType === 'lastName' && !$ctrl.sortReverse" class="glyphicon glyphicon-arrow-down"></span>
                 </label>
@@ -25,7 +25,7 @@
         <th class="date-head">
             <div>
                 <label for="ex3">
-                    <a href="#" ng-click="$ctrl.changeSort('created')">Date created</a>
+                    <a href ng-click="$ctrl.changeSort('created')">Date created</a>
                     <span ng-show="$ctrl.sortType === 'created' && $ctrl.sortReverse" class="glyphicon glyphicon-arrow-up"></span>
                     <span ng-show="$ctrl.sortType === 'created' && !$ctrl.sortReverse" class="glyphicon glyphicon-arrow-down"></span>
                 </label>
@@ -35,7 +35,7 @@
         <th class="date-head">
             <div>
                 <label for="ex4">
-                    <a href="#" ng-click="$ctrl.changeSort('done')">Date done</a>
+                    <a href ng-click="$ctrl.changeSort('done')">Date done</a>
                     <span ng-show="$ctrl.sortType === 'done' && $ctrl.sortReverse" class="glyphicon glyphicon-arrow-up"></span>
                     <span ng-show="$ctrl.sortType === 'done' && !$ctrl.sortReverse" class="glyphicon glyphicon-arrow-down"></span>
                 </label>
@@ -45,7 +45,7 @@
         <th class="status-head">
             <div>
                 <label for="ex5">
-                    <a href="#" ng-click="$ctrl.changeSort('status')">Status</a>
+                    <a href ng-click="$ctrl.changeSort('status')">Status</a>
                     <span ng-show="$ctrl.sortType === 'status' && $ctrl.sortReverse" class="glyphicon glyphicon-arrow-up"></span>
                     <span ng-show="$ctrl.sortType === 'status' && !$ctrl.sortReverse" class="glyphicon glyphicon-arrow-down"></span>
                 </label>
@@ -60,7 +60,10 @@
     </tr>
     </thead>
     <tbody>
-    <tr ng-repeat="applicant in $ctrl.applicants | orderBy:$ctrl.sortType:$ctrl.sortReverse | applicantsSearchFilter:$ctrl.searchFilter track by applicant.$id"
+    <tr ng-repeat="applicant in $ctrl.applicants
+                                    | orderBy:$ctrl.sortType:$ctrl.sortReverse
+                                    | applicantsSearchFilter:$ctrl.searchFilter
+                                    track by applicant.$id"
         ng-click="$ctrl.goToDetail(applicant)"
         ng-class="{active: !applicant.status, success: applicant.status}"
         class="pointer">

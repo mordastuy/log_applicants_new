@@ -13,10 +13,10 @@ class NavbarController {
 
         self._$uibModal.open({
             template    : template,
-            controllerAs: 'vm',
+            controllerAs: '$ctrl',
             resolve     : {
-                applicants: () => self.applicants,
-                createApplicant: () => self.createApplicant
+                applicants: () => self.homeCtrl.applicants,
+                createApplicant: () => self.homeCtrl.createApplicant
             },
             controller  : NavbarCreatingController
         });

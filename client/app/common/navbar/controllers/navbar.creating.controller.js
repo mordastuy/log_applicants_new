@@ -11,11 +11,7 @@ class NavbarCreatingController {
 
     createApplicant(isValid, applicant) {
         if (isValid) {
-            this._createApplicant({
-                applicants: this.applicants,
-                applicant: applicant
-            });
-
+            this._createApplicant(this.applicants, applicant);
             this._$uibModalInstance.close();
         }
     }
