@@ -1,5 +1,32 @@
 <div>
-    <pre>
-        <h1 style="white-space: pre-wrap">{{ $ctrl.currentApplicant | json }}</h1>
-    </pre>
+    <div ng-if="!$ctrl.currentApplicant" class="well">
+        <h2>Loading data. Please wait.</h2>
+    </div>
+    <div ng-if="$ctrl.currentApplicant">
+        <div>
+            <h3>Number: <strong>{{ $ctrl.currentApplicant.number }}</strong></h3>
+
+            <h3>Full name: <strong>{{ $ctrl.getFullName($ctrl.currentApplicant) }}</strong></h3>
+
+            <h3>Created: <strong>{{ $ctrl.currentApplicant.created }}</strong></h3>
+
+            <h3 ng-if="$ctrl.currentApplicant.done">Done: <strong>{{ $ctrl.currentApplicant.done }}</strong></h3>
+
+            <h3>Status: <strong>{{ $ctrl.getStatusName($ctrl.currentApplicant.status) }}</strong></h3>
+        </div>
+
+        <button ng-if="!$ctrl.currentApplicant.status"
+                ng-click="$ctrl.changeStatus($ctrl.currentApplicant)"
+                type="button"
+                class="btn btn-success btn-lg">
+            Add to done
+        </button>
+
+        <button ng-if="$ctrl.currentApplicant.status"
+                ng-click="$ctrl.changeStatus($ctrl.currentApplicant)"
+                type="button"
+                class="btn btn-warning btn-lg">
+            Back to work
+        </button>
+    </div>
 </div>

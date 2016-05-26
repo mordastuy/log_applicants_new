@@ -14,6 +14,10 @@ class AboutController {
             });
     }
 
+    updateApplicant(applicant) {
+        this._applicants.$save(applicant);
+    }
+
     $routerOnActivate (next) { }
 }
 
